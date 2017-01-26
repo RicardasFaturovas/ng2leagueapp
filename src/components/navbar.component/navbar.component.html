@@ -11,7 +11,20 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li><a routerLink ="/"  routerLinkActive="active" >Home</a></li>
-        <li><a routerLink ="/build"  routerLinkActive="active">Build</a></li>
+        <!--build dropdown-->
+        <li>
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Builds
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a routerLink ="/build-create"  routerLinkActive="active">Create builds</a></li>
+            <li><a routerLink ="/build-search"  routerLinkActive="active">Search builds</a></li>
+          </ul>
+        </div>
+        </li>
+
         <li><a routerLink ="/profile"  routerLinkActive="active">Profile</a></li>
         <li><a routerLink ="/about"  routerLinkActive="active">About</a></li>
       </ul>

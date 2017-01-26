@@ -11,13 +11,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var app_component_1 = require('./app.component');
-var build_component_1 = require("./components/build.component/build.component");
 var navbar_component_1 = require("./components/navbar.component/navbar.component");
 var http_1 = require("@angular/http");
 var app_routing_1 = require("./app.routing");
 var about_component_1 = require("./components/about.component/about.component");
 var home_component_1 = require("./components/home.component/home.component");
 var profile_component_1 = require("./components/profile.component/profile.component");
+var build_search_component_1 = require("./components/build.component/build.search.component/build.search.component");
+var build_create_component_1 = require("./components/build.component/build.create.component/build.create.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,7 +28,8 @@ var AppModule = (function () {
                 http_1.HttpModule,
                 app_routing_1.routing],
             declarations: [app_component_1.AppComponent,
-                build_component_1.BuildComponent,
+                build_search_component_1.BuildSearchComponent,
+                build_create_component_1.BuildCreateComponent,
                 navbar_component_1.NavbarComponent,
                 about_component_1.AboutComponent,
                 home_component_1.HomeComponent,

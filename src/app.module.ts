@@ -2,13 +2,14 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent }  from './app.component';
-import {BuildComponent} from "./components/build.component/build.component";
 import {NavbarComponent} from "./components/navbar.component/navbar.component";
 import {HttpModule} from "@angular/http";
 import {routing} from "./app.routing";
 import {AboutComponent} from "./components/about.component/about.component";
 import {HomeComponent} from "./components/home.component/home.component";
 import {ProfileComponent} from "./components/profile.component/profile.component";
+import {BuildSearchComponent} from "./components/build.component/build.search.component/build.search.component";
+import {BuildCreateComponent} from "./components/build.component/build.create.component/build.create.component";
 
 @NgModule({
   imports:      [ BrowserModule,
@@ -16,7 +17,8 @@ import {ProfileComponent} from "./components/profile.component/profile.component
                   routing],
 
   declarations: [ AppComponent,
-                  BuildComponent,
+                  BuildSearchComponent,
+                  BuildCreateComponent,
                   NavbarComponent,
                   AboutComponent,
                   HomeComponent,

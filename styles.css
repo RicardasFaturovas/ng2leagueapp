@@ -6,3 +6,11 @@ h1 {
 .title {
   text-align: center;
 }
+/*GODLIKE IMG CENTER TECHNIQUE*/
+.page-logo {
+  position: absolute;
+  width: 300px;
+  heigh: auto;
+  margin-left: -150px;
+  left: 50%;
+}
