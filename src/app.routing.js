@@ -1,14 +1,17 @@
 "use strict";
 var router_1 = require("@angular/router");
 var build_component_1 = require("./components/build.component/build.component");
+var home_component_1 = require("./components/home.component/home.component");
+var about_component_1 = require("./components/about.component/about.component");
+var profile_component_1 = require("./components/profile.component/profile.component");
 var appRoutes = [
     {
         path: '',
-        component: HomeComponent
+        component: home_component_1.HomeComponent
     },
     {
         path: 'about',
-        component: AboutComponent
+        component: about_component_1.AboutComponent
     },
     {
         path: 'build',
@@ -16,7 +19,7 @@ var appRoutes = [
     },
     {
         path: 'profile',
-        component: ProfileComponent
+        component: profile_component_1.ProfileComponent
     }
 ];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);

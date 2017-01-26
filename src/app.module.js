@@ -14,13 +14,24 @@ var app_component_1 = require('./app.component');
 var build_component_1 = require("./components/build.component/build.component");
 var navbar_component_1 = require("./components/navbar.component/navbar.component");
 var http_1 = require("@angular/http");
+var app_routing_1 = require("./app.routing");
+var about_component_1 = require("./components/about.component/about.component");
+var home_component_1 = require("./components/home.component/home.component");
+var profile_component_1 = require("./components/profile.component/profile.component");
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, http_1.HttpModule],
-            declarations: [app_component_1.AppComponent, build_component_1.BuildComponent, navbar_component_1.NavbarComponent],
+            imports: [platform_browser_1.BrowserModule,
+                http_1.HttpModule,
+                app_routing_1.routing],
+            declarations: [app_component_1.AppComponent,
+                build_component_1.BuildComponent,
+                navbar_component_1.NavbarComponent,
+                about_component_1.AboutComponent,
+                home_component_1.HomeComponent,
+                profile_component_1.ProfileComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
