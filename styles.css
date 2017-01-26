@@ -8,7 +8,7 @@ h1 {
 }
 /*GODLIKE IMG CENTER TECHNIQUE*/
 .page-logo {
-  position: absolute;
+  position: relative;
   width: 300px;
   heigh: auto;
   margin-left: -150px;
