@@ -10,26 +10,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
-var riotApiService = (function () {
-    function riotApiService(_http) {
+require('rxjs/add/operator/map');
+var RiotApiService = (function () {
+    function RiotApiService(_http) {
         this._http = _http;
         this.developerKey = 'RGAPI-EAF47474-4678-405C-A6E0-0EB899731794';
     }
-    riotApiService.prototype.getItems = function () {
+    RiotApiService.prototype.getItems = function () {
         this.itemsUrl = "https://global.api.pvp.net/api/lol/static-data/euw/v1.2/item?itemListData=all&api_key=" + this.developerKey;
         return this._http.get(this.itemsUrl)
             .map(function (res) { return res.json(); });
     };
-    riotApiService.prototype.getItem = function (itemId) {
+    RiotApiService.prototype.getItem = function (itemId) {
         this.itemUrl = "https://global.api.pvp.net/api/lol/static-data/euw/v1.2/item?" + itemId + "&api_key=" + this.developerKey;
         return this._http.get(this.itemUrl)
             .map(function (res) { return res.json(); });
     };
-    riotApiService = __decorate([
+    RiotApiService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
-    ], riotApiService);
-    return riotApiService;
+    ], RiotApiService);
+    return RiotApiService;
 }());
-exports.riotApiService = riotApiService;
+exports.RiotApiService = RiotApiService;
 //# sourceMappingURL=riotApi.service.js.map

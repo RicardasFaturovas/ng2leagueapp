@@ -9,16 +9,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var riotApi_service_1 = require("../../../services/riotApi.service");
+require('rxjs/Rx');
 var BuildCreateComponent = (function () {
-    function BuildCreateComponent() {
+    function BuildCreateComponent(_riotApiService) {
+        this._riotApiService = _riotApiService;
     }
+    BuildCreateComponent.prototype.addItem = function (item, slotNumber) {
+        this.itemSlots[slotNumber] = item;
+    };
+    BuildCreateComponent.prototype.removeItem = function (slotNumber) {
+        this.itemSlots[slotNumber] = null;
+    };
+    BuildCreateComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this._riotApiService.getItems()
+            .map(function (el) { return el.data; })
+            .subscribe(function (items) {
+            _this.items = items;
+            console.log(items);
+        });
+    };
     BuildCreateComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'build-create',
             templateUrl: 'build.create.component.html',
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [riotApi_service_1.RiotApiService])
     ], BuildCreateComponent);
     return BuildCreateComponent;
 }());
