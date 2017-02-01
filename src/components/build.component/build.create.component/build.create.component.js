@@ -11,9 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var riotApi_service_1 = require("../../../services/riotApi.service");
 require('rxjs/Rx');
+var item_class_1 = require("../../../classes/item.class");
 var BuildCreateComponent = (function () {
     function BuildCreateComponent(_riotApiService) {
         this._riotApiService = _riotApiService;
+        this.imageLink = "http://ddragon.leagueoflegends.com/cdn/6.16.2/img/item/";
     }
     BuildCreateComponent.prototype.addItem = function (item, slotNumber) {
         this.itemSlots[slotNumber] = item;
@@ -21,14 +23,21 @@ var BuildCreateComponent = (function () {
     BuildCreateComponent.prototype.removeItem = function (slotNumber) {
         this.itemSlots[slotNumber] = null;
     };
+    // formats the items json to display properly
+    BuildCreateComponent.prototype.formatItems = function (items) {
+        var _this = this;
+        return Object.keys(items)
+            .map(function (key) { return items[key]; })
+            .map(function (item) { return new item_class_1.Item(item.id, item.name, item.gold.total, item.description, "" + _this.imageLink + item.id + ".png", item.stats); });
+    };
     BuildCreateComponent.prototype.ngOnInit = function () {
         var _this = this;
         this._riotApiService.getItems()
             .map(function (el) { return el.data; })
             .subscribe(function (items) {
-            _this.items = items;
-            console.log(items);
-        });
+            _this.items = _this.formatItems(items);
+            console.log(_this.items);
+        }, function (error) { return console.log(error); });
     };
     BuildCreateComponent = __decorate([
         core_1.Component({
