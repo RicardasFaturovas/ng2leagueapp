@@ -14,3 +14,15 @@ h1 {
   margin-left: -150px;
   left: 50%;
 }
+
+/*item cards styling*/
+.item-img{
+  width: 100px;
+  heigh: auto;
+}
+
+.item-thumbnail{
+  width: 200px;
+  heigh: 400px;
+  text-align: center;
+}

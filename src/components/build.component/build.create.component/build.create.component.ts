@@ -9,8 +9,8 @@ import {Item} from "../../../classes/item.class";
   templateUrl: 'build.create.component.html',
 })
 export class BuildCreateComponent  {
-  items: Array<Item>;
-  itemSlots: Array<Item>;
+  items: Item[];
+  itemSlots: Item[] = Array(6);
   itemImages: Array<any>;
   imageLink: string = `http://ddragon.leagueoflegends.com/cdn/6.16.2/img/item/`;
 
@@ -30,7 +30,7 @@ export class BuildCreateComponent  {
   formatItems(items: Object){
     return Object.keys(items)
       .map(key => items[key])
-      .map(item => new Item(item.id, item.name, item.gold.total, item.description, `${this.imageLink}${item.id}.png`, item.stats));
+      .map(item => new Item(item.id, item.name, item.gold.total, item.description, `${this.imageLink}${item.id}.png`, item.tags, item.stats));
   }
   ngOnInit() {
     this._riotApiService.getItems()

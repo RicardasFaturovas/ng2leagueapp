@@ -15,6 +15,7 @@ var item_class_1 = require("../../../classes/item.class");
 var BuildCreateComponent = (function () {
     function BuildCreateComponent(_riotApiService) {
         this._riotApiService = _riotApiService;
+        this.itemSlots = Array(6);
         this.imageLink = "http://ddragon.leagueoflegends.com/cdn/6.16.2/img/item/";
     }
     BuildCreateComponent.prototype.addItem = function (item, slotNumber) {
@@ -28,7 +29,7 @@ var BuildCreateComponent = (function () {
         var _this = this;
         return Object.keys(items)
             .map(function (key) { return items[key]; })
-            .map(function (item) { return new item_class_1.Item(item.id, item.name, item.gold.total, item.description, "" + _this.imageLink + item.id + ".png", item.stats); });
+            .map(function (item) { return new item_class_1.Item(item.id, item.name, item.gold.total, item.description, "" + _this.imageLink + item.id + ".png", item.tags, item.stats); });
     };
     BuildCreateComponent.prototype.ngOnInit = function () {
         var _this = this;
