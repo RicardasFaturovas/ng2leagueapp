@@ -1,7 +1,9 @@
-import {Component} from "@angular/core";
+import {Component, ViewChild} from "@angular/core";
 import {RiotApiService} from "../../../services/riotApi.service";
 import 'rxjs/Rx'
 import {Item} from "../../../classes/item.class";
+import {ItemModalComponent} from "../item.modal.component/item.modal.component";
+
 
 @Component({
   moduleId: module.id,
@@ -9,10 +11,13 @@ import {Item} from "../../../classes/item.class";
   templateUrl: 'build.create.component.html',
 })
 export class BuildCreateComponent  {
+  @ViewChild(ItemModalComponent)
+  public readonly modal: ItemModalComponent;
+
   items: Item[];
   itemSlots: Item[] = Array(6);
   itemImages: Array<any>;
-  imageLink: string = `http://ddragon.leagueoflegends.com/cdn/6.16.2/img/item/`;
+  imageLink: string = `http://ddragon.leagueoflegends.com/cdn/7.2.1/img/item/`;
 
   constructor(private _riotApiService: RiotApiService){
 

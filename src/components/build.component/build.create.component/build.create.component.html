@@ -16,15 +16,17 @@
             <div class="caption">
               <h3>{{itemSlot.name}}</h3>
               <p>{{itemSlot.description}}</p>
-              <p><a class="btn btn-default" role="button" onclick="chooseItem()">Choose item</a></p>
+              <p><a class="btn btn-default" role="button" (click)="modal.show()">Choose item</a></p>
             </div>
           </div>
 
-          <img class="item-img" src="item-placeholder.png">
-          <div class="caption">
-            <h3>Item</h3>
-            <p>Description</p>
-            <p><a class="btn btn-default" role="button" onclick="chooseItem()">Choose item</a></p>
+          <div *ngIf="itemSlot===null||itemSlot===undefined">
+            <img class="item-img" src="item-placeholder.png">
+            <div class="caption">
+              <h3>Item</h3>
+              <p>Description</p>
+              <p><a class="btn btn-default" role="button" (click)="modal.show()">Choose item</a></p>
+            </div>
           </div>
 
         </div>
@@ -46,5 +48,28 @@
         </ul>
     </div>
   </div>
+
+  <item-modal>
+    <div class="app-modal-header">
+      header
+    </div>
+    <div class="app-modal-body">
+      <div class="row">
+        <div *ngFor="let item of items">
+          <div class="col-md-2">
+            <div class="thumbnail small-item-thumbnail">
+              <img class="small-item-img" src="{{item.image}}">
+              {{item.name}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="app-modal-footer">
+      <button type="button" class="btn btn-default" (click)="modal.hide()">Close</button>
+      <button type="button" class="btn btn-primary">Save changes</button>
+    </div>
+  </item-modal>
 
 </div>

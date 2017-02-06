@@ -10,6 +10,7 @@ import {HomeComponent} from "./components/home.component/home.component";
 import {ProfileComponent} from "./components/profile.component/profile.component";
 import {BuildSearchComponent} from "./components/build.component/build.search.component/build.search.component";
 import {BuildCreateComponent} from "./components/build.component/build.create.component/build.create.component";
+import {ItemModalComponent} from "./components/build.component/item.modal.component/item.modal.component";
 
 @NgModule({
   imports:      [ BrowserModule,
@@ -22,7 +23,8 @@ import {BuildCreateComponent} from "./components/build.component/build.create.co
                   NavbarComponent,
                   AboutComponent,
                   HomeComponent,
-                  ProfileComponent],
+                  ProfileComponent,
+                  ItemModalComponent],
 
   bootstrap:    [ AppComponent ]
 })

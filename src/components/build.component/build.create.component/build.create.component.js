@@ -12,11 +12,12 @@ var core_1 = require("@angular/core");
 var riotApi_service_1 = require("../../../services/riotApi.service");
 require('rxjs/Rx');
 var item_class_1 = require("../../../classes/item.class");
+var item_modal_component_1 = require("../item.modal.component/item.modal.component");
 var BuildCreateComponent = (function () {
     function BuildCreateComponent(_riotApiService) {
         this._riotApiService = _riotApiService;
         this.itemSlots = Array(6);
-        this.imageLink = "http://ddragon.leagueoflegends.com/cdn/6.16.2/img/item/";
+        this.imageLink = "http://ddragon.leagueoflegends.com/cdn/7.2.1/img/item/";
     }
     BuildCreateComponent.prototype.addItem = function (item, slotNumber) {
         this.itemSlots[slotNumber] = item;
@@ -40,6 +41,10 @@ var BuildCreateComponent = (function () {
             console.log(_this.items);
         }, function (error) { return console.log(error); });
     };
+    __decorate([
+        core_1.ViewChild(item_modal_component_1.ItemModalComponent), 
+        __metadata('design:type', item_modal_component_1.ItemModalComponent)
+    ], BuildCreateComponent.prototype, "modal", void 0);
     BuildCreateComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

@@ -19,6 +19,7 @@ var home_component_1 = require("./components/home.component/home.component");
 var profile_component_1 = require("./components/profile.component/profile.component");
 var build_search_component_1 = require("./components/build.component/build.search.component/build.search.component");
 var build_create_component_1 = require("./components/build.component/build.create.component/build.create.component");
+var item_modal_component_1 = require("./components/build.component/item.modal.component/item.modal.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -33,7 +34,8 @@ var AppModule = (function () {
                 navbar_component_1.NavbarComponent,
                 about_component_1.AboutComponent,
                 home_component_1.HomeComponent,
-                profile_component_1.ProfileComponent],
+                profile_component_1.ProfileComponent,
+                item_modal_component_1.ItemModalComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
