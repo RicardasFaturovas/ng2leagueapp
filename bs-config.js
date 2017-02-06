@@ -1,6 +1,6 @@
  module.exports = {
-   port: process.env.PORT,
-  files: ['./**/*.{html,htm,css,js}'],
+   port: process.env.PORT || 3000,
+   files: ['./**/*.{html,htm,css,js}'],
    server:{
      baseDir: "./"
    }
