@@ -14,9 +14,11 @@ var ItemModalComponent = (function () {
         this.visible = false;
         this.visibleAnimate = false;
     }
-    ItemModalComponent.prototype.show = function () {
+    ItemModalComponent.prototype.show = function (id) {
         var _this = this;
         this.visible = true;
+        this.id = id;
+        console.log(this.id);
         setTimeout(function () { return _this.visibleAnimate = true; });
     };
     ItemModalComponent.prototype.hide = function () {

@@ -5,9 +5,9 @@ export class Item {
   description: string;
   image: string;
   tags: Array<string>
-  stats: Object;
+  stats: Array<Object>;
 
-  constructor(id: number, name: string,  gold: number,  description: string, image: string, tags: Array<string>, stats: Object) {
+  constructor(id: number, name: string,  gold: number,  description: string, image: string, tags: Array<string>, stats: Array<Object>) {
     this.id= id;
     this.name= name;
     this.gold= gold;

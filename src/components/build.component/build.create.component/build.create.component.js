@@ -16,11 +16,12 @@ var item_modal_component_1 = require("../item.modal.component/item.modal.compone
 var BuildCreateComponent = (function () {
     function BuildCreateComponent(_riotApiService) {
         this._riotApiService = _riotApiService;
-        this.itemSlots = Array(6);
+        this.itemSlots = Array(6).fill(null);
         this.imageLink = "http://ddragon.leagueoflegends.com/cdn/7.2.1/img/item/";
     }
     BuildCreateComponent.prototype.addItem = function (item, slotNumber) {
         this.itemSlots[slotNumber] = item;
+        console.log(this.itemSlots);
     };
     BuildCreateComponent.prototype.removeItem = function (slotNumber) {
         this.itemSlots[slotNumber] = null;
@@ -30,7 +31,12 @@ var BuildCreateComponent = (function () {
         var _this = this;
         return Object.keys(items)
             .map(function (key) { return items[key]; })
-            .map(function (item) { return new item_class_1.Item(item.id, item.name, item.gold.total, item.description, "" + _this.imageLink + item.id + ".png", item.tags, item.stats); });
+            .map(function (item) { return new item_class_1.Item(item.id, item.name, item.gold.total, item.plaintext, "" + _this.imageLink + item.id + ".png", item.tags, Object.keys(item.stats).map(function (key) {
+            return {
+                "statName": key,
+                "statAmount": item.stats[key]
+            };
+        })); });
     };
     BuildCreateComponent.prototype.ngOnInit = function () {
         var _this = this;
