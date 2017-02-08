@@ -25,13 +25,15 @@ h1 {
 
 /*item cards styling*/
 .item-img{
-  width: 100px;
+  width: 80px;
   heigh: auto;
 }
 
 .item-thumbnail{
   width: 200px;
-  heigh: 400px;
+  max-width: 200px;
+  height: 400px;
+  max-heigh: 400px;
   text-align: center;
 }
 
@@ -47,4 +49,10 @@ h1 {
   heigh: 40px;
 }
 
+.item-slot-stats {
+  margin: 0;
+  padding: 5px;
+  text-align: left;
+  font-size: 0.9vw;
+}
 

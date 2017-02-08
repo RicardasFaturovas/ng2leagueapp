@@ -17,6 +17,10 @@
               <h3>{{itemSlot.name}}</h3>
               <p>{{itemSlot.description}}</p>
               <p><a class="btn btn-default" role="button" (click)="modal.show(i)">Choose item</a></p>
+
+              <ul *ngFor="let stat of itemSlot.stats" class="item-slot-stats">
+                <li>{{stat.statName}} : {{stat.statAmount}}</li>
+              </ul>
             </div>
           </div>
 
