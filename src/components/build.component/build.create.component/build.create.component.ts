@@ -17,7 +17,6 @@ export class BuildCreateComponent  {
 
   items: Item[];
   itemSlots: Item[] = Array(6).fill(null);
-  itemImages: Array<any>;
   imageLink: string = `http://ddragon.leagueoflegends.com/cdn/7.2.1/img/item/`;
 
   constructor(private _riotApiService: RiotApiService){

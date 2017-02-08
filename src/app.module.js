@@ -20,6 +20,8 @@ var profile_component_1 = require("./components/profile.component/profile.compon
 var build_search_component_1 = require("./components/build.component/build.search.component/build.search.component");
 var build_create_component_1 = require("./components/build.component/build.create.component/build.create.component");
 var item_modal_component_1 = require("./components/build.component/item.modal.component/item.modal.component");
+var item_search_pipe_1 = require("./pipes/item.search.pipe");
+var forms_1 = require("@angular/forms");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,6 +29,7 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule,
                 http_1.HttpModule,
+                forms_1.FormsModule,
                 app_routing_1.routing],
             declarations: [app_component_1.AppComponent,
                 build_search_component_1.BuildSearchComponent,
@@ -35,7 +38,8 @@ var AppModule = (function () {
                 about_component_1.AboutComponent,
                 home_component_1.HomeComponent,
                 profile_component_1.ProfileComponent,
-                item_modal_component_1.ItemModalComponent],
+                item_modal_component_1.ItemModalComponent,
+                item_search_pipe_1.ItemSearchPipe],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
