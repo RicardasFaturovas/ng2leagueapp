@@ -15,7 +15,6 @@ export class ItemModalComponent  {
   public show(id:number): void {
     this.visible = true;
     this.id= id;
-    console.log(this.id);
     setTimeout(() => this.visibleAnimate = true);
   }
 

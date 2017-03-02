@@ -23,6 +23,9 @@ var BuildCreateComponent = (function () {
         this.itemSlots[slotNumber] = item;
         console.log(this.itemSlots);
     };
+    //function to add item stats to collective array
+    BuildCreateComponent.prototype.addToStats = function (item) {
+    };
     BuildCreateComponent.prototype.removeItem = function (slotNumber) {
         this.itemSlots[slotNumber] = null;
     };

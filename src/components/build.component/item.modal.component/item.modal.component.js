@@ -18,7 +18,6 @@ var ItemModalComponent = (function () {
         var _this = this;
         this.visible = true;
         this.id = id;
-        console.log(this.id);
         setTimeout(function () { return _this.visibleAnimate = true; });
     };
     ItemModalComponent.prototype.hide = function () {

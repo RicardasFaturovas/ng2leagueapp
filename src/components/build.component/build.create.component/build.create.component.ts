@@ -14,8 +14,8 @@ export class BuildCreateComponent  {
   @ViewChild(ItemModalComponent)
   public readonly modal: ItemModalComponent;
 
-
   items: Item[];
+  stats: Object[];
   itemSlots: Item[] = Array(6).fill(null);
   imageLink: string = `http://ddragon.leagueoflegends.com/cdn/7.2.1/img/item/`;
 
@@ -28,6 +28,11 @@ export class BuildCreateComponent  {
     console.log(this.itemSlots);
   }
 
+  //function to add item stats to collective array
+  addToStats(item: Item){
+
+  }
+
   removeItem(slotNumber: number){
     this.itemSlots[slotNumber] = null;
   }
@@ -36,7 +41,8 @@ export class BuildCreateComponent  {
   formatItems(items: Object){
     return Object.keys(items)
       .map(key => items[key])
-      .map(item => new Item(item.id,
+      .map(item => new Item(
+        item.id,
         item.name,
         item.gold.total,
         item.plaintext,
@@ -47,8 +53,10 @@ export class BuildCreateComponent  {
             "statName": key,
             "statAmount":item.stats[key]
           }
-        })));
+        })
+      ));
   }
+
   ngOnInit() {
     this._riotApiService.getItems()
       .map(el => el.data)

@@ -4,7 +4,6 @@ h1 {
   font-size: 250%;
 }
 
-
 .title {
   text-align: center;
 }
@@ -29,6 +28,11 @@ h1 {
   heigh: auto;
 }
 
+.item-img:hover{
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px deepskyblue;
+}
+
 .item-thumbnail{
   width: 200px;
   max-width: 200px;
@@ -41,12 +45,16 @@ h1 {
   width: 80px;
   height: 100px;
   text-align: center;
-  font-size: 0.9vw;
+  font-size: 1.2vmin;
 }
 
 .small-item-img{
   width: 40px;
   heigh: 40px;
+}
+
+.small-item-img:hover{
+  box-shadow: 0 0 2px 2px deepskyblue;
 }
 
 .item-slot-stats {

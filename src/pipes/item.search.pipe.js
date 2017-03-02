@@ -18,11 +18,7 @@ var ItemSearchPipe = (function () {
         }
         else if (value) {
             return value.filter(function (item) {
-                for (var key in item) {
-                    if ((typeof item[key] === 'string' || item[key] instanceof String) && (item[key].indexOf(args[0] !== -1))) {
-                        return true;
-                    }
-                }
+                item.name.startsWith(args[0]);
             });
         }
     };
